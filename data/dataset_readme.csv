@@ -1,0 +1,26 @@
+SIG Energy Strategy Hackathon: Dataset,,
+,,
+Source,"Yahoo Finance, pulled with the yfinance package",
+Pulled on,2026-11-07,
+Date range,2021-11-01 to 2026-10-30  (1255 trading days),
+Frequency,"Daily, US trading days only",
+Prices,Adjusted close (adjusted for splits and dividends),
+Daily Returns sheet,"Each day's close divided by the previous day's close, minus 1 (simple return). Stored as values.",
+VIX,Market volatility index. Use it as a signal. It is NOT a tradable asset.,
+Rules reminder,Your strategy may only trade the 14 tickers below. Say which dates you used for any claim.,
+,,
+Ticker,Name,Type
+XOM,Exxon Mobil,Stock: integrated major
+CVX,Chevron,Stock: integrated major
+COP,ConocoPhillips,Stock: oil & gas producer
+EOG,EOG Resources,Stock: oil & gas producer
+OXY,Occidental Petroleum,Stock: oil & gas producer
+SLB,Schlumberger,Stock: oilfield services
+MPC,Marathon Petroleum,Stock: refiner
+PSX,Phillips 66,Stock: refiner
+VLO,Valero Energy,Stock: refiner
+XLE,Energy Select Sector SPDR Fund,ETF: large US energy companies
+XOP,SPDR S&P Oil & Gas Exploration & Production ETF,ETF: producers
+OIH,VanEck Oil Services ETF,ETF: oilfield services
+ICLN,iShares Global Clean Energy ETF,ETF: clean energy
+URA,Global X Uranium ETF,ETF: uranium

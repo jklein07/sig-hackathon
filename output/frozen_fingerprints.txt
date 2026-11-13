@@ -1,0 +1,3 @@
+a1de21b9ecf8df3a076bf5a231014e61e43fa78862d569d7bcd1bfb8e42c43a3  hypothesis.md
+833bd83fa4682f4e4cfac525563ace4b11c1662e578f86074b16218884bc618b  scripts/backtest_design.py
+f31a54ac670502133ccf9d818ecb7ca0425257c27a2201bf4b6a84ed3f2944ec  scripts/forecast_rebalance.py
