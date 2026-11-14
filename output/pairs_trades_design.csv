@@ -1,0 +1,2 @@
+pair,block,signal_day,fill_day,z_entry,beta,dir,gross0,pnl,filter_cross_i,trade_cross_i,exit_day,reason,hold,net_return_on_gross,net_pnl_pct_equity,filter_crossed_first
+COP-EOG,4,2023-09-20,2023-09-21,2.35,1.005,-1.0,1.0,0.017917918861836735,,,2023-10-13,time stop,16,0.017917918861836735,0.017917918861836735,False

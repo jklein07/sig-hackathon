@@ -1,0 +1,27 @@
+BACK-TEST C2b, DESIGN PERIOD ONLY (2021-11-01 to 2024-10-31), rules as frozen in hypothesis-c2.md
+Spread = long side minus short side; signed so positive = prediction right. Before costs unless stated.
+
+update       days   before    after   short side (weight)
+2021-12-17     10   -2.43%   -0.31%   MPC 50%
+2022-06-17     10   +1.09%   -0.65%   MPC 50%
+2022-09-16      9   +1.34%   -0.43%   OXY 41%, MPC 5%, CVX 4%
+2022-12-16     10   +1.20%   -1.29%   MPC 43%, OXY 7%
+2023-06-16     10   -3.83%   +2.48%   MPC 34%, VLO 16%
+2023-09-15      9   -2.57%   -0.49%   OXY 23%, MPC 21%, PSX 5%, VLO 1%
+2023-12-15     10   +0.09%   -0.16%   MPC 33%, VLO 17%
+2024-06-21      9   +0.92%   -2.23%   MPC 36%, VLO 8%, PSX 6%
+2024-09-20     10   +5.13%   -0.27%   MPC 44%, VLO 6%
+
+BEFORE-WINDOW: right sign on 6 of 9; average +0.10% (median +0.92%); after 0.20% cost -0.10%; return on capital per event after costs -0.05%, summed over events -0.43%
+  frozen test (at least 8 of 9 right, average at least 0.40%): NOT SUPPORTED
+  random dates: chance alone did as well in 34.7% of 10,000 draws
+AFTER-WINDOW: right sign on 1 of 9; average -0.37% (median -0.43%); after 0.20% cost -0.57%; return on capital per event after costs -0.29%, summed over events -2.57%
+  frozen test (at least 8 of 9 right, average at least 0.40%): NOT SUPPORTED
+  random dates: chance alone did as well in 73.4% of 10,000 draws
+
+DECLARED CHECKS (not results)
+  cost 10 bps per transaction: before: average after cost -0.30% (NOT SUPPORTED); after: average after cost -0.77% (NOT SUPPORTED)
+  cost 20 bps per transaction: before: average after cost -0.70% (NOT SUPPORTED); after: average after cost -1.17% (NOT SUPPORTED)
+  placebo, non-update third Fridays, latest update's weights: 21 windows; before right sign 8/21, average -0.44%; after right sign 11/21, average -0.30%
+  options-expiry control, March windows with December weights: 3 windows; before right sign 1/3, average -3.33%; after right sign 2/3, average +2.44%
+  without MPC (short side reweighted): 7 windows; before right sign 4/7, average +0.10%; after right sign 2/7, average -0.69%

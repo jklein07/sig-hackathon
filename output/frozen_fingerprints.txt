@@ -1,3 +1,37 @@
 a1de21b9ecf8df3a076bf5a231014e61e43fa78862d569d7bcd1bfb8e42c43a3  hypothesis.md
 833bd83fa4682f4e4cfac525563ace4b11c1662e578f86074b16218884bc618b  scripts/backtest_design.py
 f31a54ac670502133ccf9d818ecb7ca0425257c27a2201bf4b6a84ed3f2944ec  scripts/forecast_rebalance.py
+
+# C2b (strategy variant 2), frozen 2026-11-13 22:35 EST
+f1296e657901b220c70b8e744ced9b52d84784d1963def7d6e2dc35ce68db9c9  hypothesis-c2.md
+1f934bf3e56ca86b3b338f78ca80f0214d7273bf1e8cf2540dcede27955a4c80  output/c2b_signals.csv
+875aa223587ae8e616b570c9c4b975c7ca76e8813a1d919ab9bdb10cadee5a21  scripts/c2_forecast_shrink.py
+9153774002aac960ac70f08205b8a4ca9c03cebfde60596c62a23a5e50c21ce7  scripts/c2_backtest_design.py
+1cd30dec68f443ba4dd71c36ff6ab33d3fc6116d8c5fc9fe6a67cfe59e0762ab  data/sec/cover_page_shares.csv
+cd70e7dba6215fdef147c64a69b1e606df3b08d4eaa52eebc2799b371351afe3  data/sec/berkshire_stakes.csv
+
+# Pairs (strategy variant 3), frozen 2026-11-13 22:55 EST
+e20924ef8eebd1d274b7629cddc5298d3fa0d9eccdb607ec75ed2af92afe5574  hypothesis-pairs.md
+5d38113c0a1119f015238444347f99394f701f8bc7475af02bb6f68ff1c1fdab  scripts/pairs_kalman.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# Pairs version 2 (strategy variant 3b), frozen 2026-11-13 23:00 EST
+02d63a8052fd804fd24934da8a87897d97d500c4ec9fdf892ca870ef5acbdfac  hypothesis-pairs-v2.md
+059adf6c4fcc05af67028e9506b78698e0e140421420e88acd84b8ebbb8b8a52  scripts/pairs_kalman_v2.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# Distance-method pairs (strategy variant 5), frozen 2026-11-13 23:11 EST
+38f818f28da9607d29a655883c536b036f3d419bfdbcc429d10ca3a67b12bc47  hypothesis-distance.md
+5979532c6a6d8188d72357155aebd62d50031745ef7cc36d81afc3e4b6c0d5fe  scripts/pairs_distance.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# Distance-method pairs (variant 5), REFROZEN 2026-11-13 23:12 EST after code-only fix (attempt #19); supersedes the entry above
+e1f72eda4cb360e17377b48e8fbe6a94d4d24cdd19df1a6902220dea3565c774  hypothesis-distance.md
+c4f2a40fd030ef54c4a2b4f6c2d12848678db94d9f5e3dfb5ebb05dc5037bca2  scripts/pairs_distance.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# 2026-11-13 23:29 EST: one origin sentence in each file's header was removed after freezing. Rules sections unchanged; the fingerprints above are the versions that were run.
+f5f3e6918b5b78e24abafd6a8a408a03027ea291b303ac441c8dac77e94124e7  hypothesis-c2.md
+43131f632f49a50e9258d991cd61ffe287cc1db659baac7c06f9971432985178  hypothesis-pairs.md
+4d8d0818f2e98216633decc0de28141646d4eaca3e5b0930c47fc762fedd02b4  hypothesis-pairs-v2.md
+27e73ae21205cb9b691f8b0e9f1f6dfa9fda281cb77911792daaa698022cf165  hypothesis-distance.md

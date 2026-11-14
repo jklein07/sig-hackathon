@@ -1,0 +1,70 @@
+DISTANCE-METHOD PAIRS, DESIGN PERIOD ONLY (prices 2021-11-01 to 2024-10-31); rules as frozen in hypothesis-distance.md
+Trading from 2022-11-01; 18 overlapping 6-month portfolios. After costs (5 bp per transaction, 0.5%/yr borrow).
+
+PORTFOLIOS (closest 3 of 7 same-business pairs at each formation)
+     start        end                     pairs  return  trades  max_held_gross
+2022-11-01 2023-05-03 COP-EOG, MPC-VLO, XOM-CVX  +0.00%       0          +0.00%
+2022-12-01 2023-06-02 COP-EOG, MPC-VLO, XOM-CVX  +0.00%       0          +0.00%
+2023-01-03 2023-07-05 MPC-VLO, COP-EOG, XOM-CVX  +0.00%       0          +0.00%
+2023-02-02 2023-08-03 MPC-VLO, XOM-CVX, COP-EOG  +0.00%       0          +0.00%
+2023-03-06 2023-09-01 COP-EOG, MPC-VLO, XOM-CVX  +0.00%       0          +0.00%
+2023-04-04 2023-10-03 COP-EOG, COP-OXY, EOG-OXY  +0.00%       0          +0.00%
+2023-05-04 2023-11-01 PSX-VLO, EOG-OXY, COP-EOG  +2.00%       2         +78.18%
+2023-06-05 2023-12-01 PSX-VLO, EOG-OXY, COP-EOG  +2.79%       4         +67.27%
+2023-07-06 2024-01-03 PSX-VLO, XOM-CVX, COP-EOG  -1.83%       1         +37.96%
+2023-08-04 2024-02-02 COP-EOG, PSX-VLO, MPC-PSX  -1.42%       2         +67.69%
+2023-09-05 2024-03-05 COP-EOG, PSX-VLO, MPC-PSX  +0.21%       1         +38.46%
+2023-10-04 2024-04-04 COP-EOG, COP-OXY, MPC-PSX  +2.64%       1         +44.04%
+2023-11-02 2024-05-03 COP-EOG, PSX-VLO, COP-OXY  +3.38%       2         +84.95%
+2023-12-04 2024-06-04 EOG-OXY, COP-EOG, COP-OXY  +1.90%       2         +79.01%
+2024-01-04 2024-07-05 COP-EOG, EOG-OXY, COP-OXY  +1.80%       2         +39.09%
+2024-02-05 2024-08-05 XOM-CVX, EOG-OXY, COP-EOG  -3.81%       3        +104.68%
+2024-03-06 2024-09-04 XOM-CVX, COP-EOG, EOG-OXY  -1.49%       4        +101.79%
+2024-04-05 2024-10-03 XOM-CVX, COP-EOG, EOG-OXY  -3.10%       3        +101.89%
+
+TRADES
+   pair portfolio_start signal_day   fill_day   exit_day         reason  gap_entry_sigmas  hold  net_return_on_gross
+PSX-VLO      2023-05-04 2023-06-26 2023-06-27 2023-10-30 prices crossed           -2.1500    87              +0.0681
+COP-EOG      2023-05-04 2023-08-30 2023-08-31 2023-11-01     period end           +2.0500    43              -0.0081
+PSX-VLO      2023-06-05 2023-06-27 2023-06-28 2023-07-11 prices crossed           -2.2100     8              +0.0412
+PSX-VLO      2023-06-05 2023-09-21 2023-09-22 2023-10-30 prices crossed           -2.2200    26              +0.0453
+PSX-VLO      2023-06-05 2023-11-29 2023-11-30 2023-12-01     period end           +2.8100     1              -0.0001
+EOG-OXY      2023-06-05 2023-07-28 2023-07-31 2023-12-01     period end           +2.1100    87              -0.0038
+PSX-VLO      2023-07-06 2023-11-02 2023-11-03 2024-01-03     period end           +2.0000    40              -0.0548
+COP-EOG      2023-08-04 2023-09-01 2023-09-05 2024-02-02     period end           +2.1400   104              -0.0300
+PSX-VLO      2023-08-04 2023-11-30 2023-12-01 2024-02-02     period end           +2.7200    42              -0.0128
+PSX-VLO      2023-09-05 2023-11-30 2023-12-01 2024-03-05     period end           +2.3900    63              +0.0063
+MPC-PSX      2023-10-04 2023-12-22 2023-12-26 2024-04-04     period end           -2.1400    68              +0.0792
+COP-EOG      2023-11-02 2024-02-08 2024-02-09 2024-04-25 prices crossed           +2.0700    52              +0.0225
+PSX-VLO      2023-11-02 2023-11-30 2023-12-01 2024-04-30 prices crossed           +2.1700   102              +0.0790
+COP-EOG      2023-12-04 2024-02-08 2024-02-09 2024-05-01 prices crossed           +2.0200    56              +0.0241
+EOG-OXY      2023-12-04 2024-02-15 2024-02-16 2024-06-04     period end           -2.2600    74              +0.0327
+EOG-OXY      2024-01-04 2024-02-23 2024-02-26 2024-05-13 prices crossed           -2.0600    54              +0.0576
+COP-EOG      2024-01-04 2024-07-02 2024-07-03 2024-07-05     period end           -2.0900     1              -0.0035
+XOM-CVX      2024-02-05 2024-03-05 2024-03-06 2024-08-05     period end           +2.2200   104              -0.0514
+EOG-OXY      2024-02-05 2024-07-12 2024-07-15 2024-08-05     period end           +2.1000    15              -0.0154
+COP-EOG      2024-02-05 2024-05-02 2024-05-03 2024-08-05     period end           -2.4700    63              -0.0478
+XOM-CVX      2024-03-06 2024-04-02 2024-04-03 2024-06-18 prices crossed           +2.6200    53              +0.0190
+XOM-CVX      2024-03-06 2024-07-24 2024-07-25 2024-09-04     period end           +2.1600    28              -0.0349
+COP-EOG      2024-03-06 2024-07-08 2024-07-09 2024-09-04     period end           -2.0900    40              -0.0016
+EOG-OXY      2024-03-06 2024-07-12 2024-07-15 2024-09-04     period end           +2.2400    36              -0.0268
+XOM-CVX      2024-04-05 2024-08-05 2024-08-06 2024-10-03     period end           +2.0400    41              -0.0087
+COP-EOG      2024-04-05 2024-07-01 2024-07-02 2024-10-03     period end           -2.0100    65              -0.0255
+EOG-OXY      2024-04-05 2024-07-15 2024-07-16 2024-10-03     period end           +2.0900    56              -0.0593
+
+RESULT
+  Annualised Sharpe +0.21 (need >= 0.5); portfolios positive 7 of 18 (need >= 11); completed trades 27 (need >= 10)
+  Total return +0.48%; annualised volatility 1.18%; max drawdown -1.65%; win rate 41%; average hold 52.2 days; largest held exposure in a portfolio 105% of its capital (at most 100% at entry)
+  Exits: period end 19, prices crossed 8
+  FROZEN TEST: NOT SUPPORTED
+
+DECLARED CHECKS (not results)
+  trigger 1.5 sigma: Sharpe +0.06, total +0.17%, max drawdown -1.84%, portfolios positive 9/18, trades 44
+  trigger 2.5 sigma: Sharpe -0.20, total -0.33%, max drawdown -1.20%, portfolios positive 4/18, trades 19
+  cost 10 bp: Sharpe +0.14, total +0.33%, max drawdown -1.71%, portfolios positive 7/18, trades 27
+  cost 20 bp: Sharpe +0.01, total +0.02%, max drawdown -1.83%, portfolios positive 7/18, trades 27
+  fixed three pairs: Sharpe -0.55, total -0.78%, max drawdown -1.32%, portfolios positive 2/18, trades 16
+  all 7 candidates: Sharpe +0.41, total +0.52%, max drawdown -0.85%, portfolios positive 7/18, trades 41
+  same-day fills: Sharpe +0.12, total +0.27%, max drawdown -1.75%, portfolios positive 7/18, trades 27
+  by pair: COP-EOG 8 trades, win 25%, average -0.87% on gross; EOG-OXY 6 trades, win 33%, average -0.25% on gross; MPC-PSX 1 trades, win 100%, average +7.92% on gross; PSX-VLO 8 trades, win 62%, average +2.15% on gross; XOM-CVX 4 trades, win 25%, average -1.90% on gross
+  placebo, 200 draws of three random oil pairs: median Sharpe -0.19; share at least as good as the main result 20%

@@ -1,0 +1,63 @@
+PAIRS (KALMAN) BACK-TEST, DESIGN PERIOD ONLY (2021-11-01 to 2024-10-31)
+Trading blocks: 8, 2022-11-01 to 2024-10-31. All figures after costs (5 bp per transaction, 0.5%/yr borrow).
+
+ELIGIBILITY (formation window: Engle-Granger p < 0.05 and half-life 5-63 days)
+ block      start        end    pair  coint_p  half_life  beta_ols  eligible
+     1 2022-11-01 2023-02-01 XOM-CVX   0.7806       63.8     1.051     False
+     1 2022-11-01 2023-02-01 COP-EOG   0.5383       12.3     1.129     False
+     1 2022-11-01 2023-02-01 MPC-VLO   0.8405       33.7     0.847     False
+     2 2023-02-02 2023-05-03 XOM-CVX   0.9207      153.1     1.096     False
+     2 2023-02-02 2023-05-03 COP-EOG   0.2996        8.7     1.221     False
+     2 2023-02-02 2023-05-03 MPC-VLO   0.7186       31.5     0.980     False
+     3 2023-05-04 2023-08-03 XOM-CVX   0.8188       56.9     1.142     False
+     3 2023-05-04 2023-08-03 COP-EOG   0.2117       10.0     1.109     False
+     3 2023-05-04 2023-08-03 MPC-VLO   0.8439       38.5     1.231     False
+     4 2023-08-04 2023-11-01 XOM-CVX   0.7323       40.7     0.943     False
+     4 2023-08-04 2023-11-01 COP-EOG   0.0460        7.4     0.992      True
+     4 2023-08-04 2023-11-01 MPC-VLO   0.8952       59.4     0.944     False
+     5 2023-11-02 2024-02-02 XOM-CVX   0.2321       12.8     0.447     False
+     5 2023-11-02 2024-02-02 COP-EOG   0.0691        8.5     1.041     False
+     5 2023-11-02 2024-02-02 MPC-VLO   0.9863        inf     1.005     False
+     6 2024-02-05 2024-05-03 XOM-CVX   0.1285       10.2     0.838     False
+     6 2024-02-05 2024-05-03 COP-EOG   0.6300       21.5     1.046     False
+     6 2024-02-05 2024-05-03 MPC-VLO   0.5418       38.9     1.227     False
+     7 2024-05-06 2024-08-05 XOM-CVX   0.5026       27.1     1.027     False
+     7 2024-05-06 2024-08-05 COP-EOG   0.1778       14.6     1.048     False
+     7 2024-05-06 2024-08-05 MPC-VLO   0.4935       25.9     1.320     False
+     8 2024-08-06 2024-10-31 XOM-CVX   0.8275       45.4     1.107     False
+     8 2024-08-06 2024-10-31 COP-EOG   0.9462       66.4     0.744     False
+     8 2024-08-06 2024-10-31 MPC-VLO   0.5699       24.4     0.963     False
+
+BLOCKS
+  block 1  2022-11-01 to 2023-02-01  return +0.00%  eligible: none
+  block 2  2023-02-02 to 2023-05-03  return +0.00%  eligible: none
+  block 3  2023-05-04 to 2023-08-03  return +0.00%  eligible: none
+  block 4  2023-08-04 to 2023-11-01  return +1.79%  eligible: COP-EOG
+  block 5  2023-11-02 to 2024-02-02  return +0.00%  eligible: none
+  block 6  2024-02-05 to 2024-05-03  return +0.00%  eligible: none
+  block 7  2024-05-06 to 2024-08-05  return +0.00%  eligible: none
+  block 8  2024-08-06 to 2024-10-31  return +0.00%  eligible: none
+
+TRADES
+   pair  block signal_day   fill_day   exit_day    reason  z_entry    beta  hold  net_return_on_gross  net_pnl_pct_equity  filter_crossed_first
+COP-EOG      4 2023-09-20 2023-09-21 2023-10-13 time stop  +2.3500 +1.0050    16              +0.0179             +0.0179                 False
+
+RESULT
+  Annualised Sharpe +0.94 (need >= 0.5); blocks positive 1 of 8 (need >= 5); completed trades 1 (need >= 10)
+  Total return +1.79%; annualised volatility 0.95%; max drawdown -0.86%; win rate 100%; average hold 16.0 days; in the market 3% of days; max gross exposure 104% of equity
+  FROZEN TEST: TOO FEW TO JUDGE
+
+DECLARED CHECKS (not results)
+  rolling-regression hedge: Sharpe +0.57, total +1.03%, max drawdown -0.81%, blocks positive 1/8, trades 1
+  state noise cov/1008 (slower hedge): Sharpe +0.94, total +1.79%, max drawdown -0.86%, blocks positive 1/8, trades 1
+  state noise cov/63 (faster hedge): Sharpe +0.95, total +1.81%, max drawdown -0.88%, blocks positive 1/8, trades 1
+  entry 1.5: Sharpe +0.15, total +0.28%, max drawdown -0.90%, blocks positive 1/8, trades 1
+  entry 2.5: Sharpe +1.06, total +2.05%, max drawdown -0.87%, blocks positive 1/8, trades 1
+  no VIX filter: Sharpe +0.94, total +1.79%, max drawdown -0.86%, blocks positive 1/8, trades 1
+  cost 10 bp: Sharpe +0.89, total +1.69%, max drawdown -0.86%, blocks positive 1/8, trades 1
+  cost 20 bp: Sharpe +0.79, total +1.48%, max drawdown -0.86%, blocks positive 1/8, trades 1
+  nine pairs (excluded six added): Sharpe +0.97, total +2.91%, max drawdown -0.80%, blocks positive 2/8, trades 2
+  by pair: COP-EOG 1 trades, win 100%, P&L +1.79% of equity
+  hedge drift: filter z crossed zero before the frozen-hedge z on 0 of 1 trades
+  placebo 1, ICLN-URA: Sharpe +0.00, total +0.00%, max drawdown 0.00%, blocks positive 0/8, trades 0
+  placebo 2, 200 draws of three random oil pairs: median Sharpe +0.00; share of draws at least as good as the main result 8%
