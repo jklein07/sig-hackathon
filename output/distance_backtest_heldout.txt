@@ -1,0 +1,96 @@
+DISTANCE-METHOD PAIRS, HELD-OUT PERIOD (single run); frozen code from pairs_distance.py
+Prices loaded 2023-11-01 to 2026-10-30; trading from 2024-11-01; 18 overlapping 6-month portfolios. After costs (5 bp per transaction, 0.5%/yr borrow).
+
+PORTFOLIOS (closest 3 of 7 same-business pairs at each formation)
+     start        end                     pairs  return  trades  max_held_gross
+2024-11-01 2025-05-06 COP-OXY, COP-EOG, XOM-CVX  +3.09%       3        +104.18%
+2024-12-03 2025-06-05 COP-OXY, MPC-VLO, MPC-PSX  +0.45%       3         +79.66%
+2025-01-03 2025-07-08 MPC-VLO, COP-OXY, MPC-PSX  +3.79%       4        +116.02%
+2025-02-05 2025-08-06 MPC-VLO, COP-OXY, MPC-PSX  +1.85%       3         +82.87%
+2025-03-07 2025-09-05 MPC-PSX, MPC-VLO, XOM-CVX  +0.43%       3        +120.40%
+2025-04-07 2025-10-06 PSX-VLO, MPC-PSX, MPC-VLO  -2.08%       4        +134.98%
+2025-05-07 2025-11-04 PSX-VLO, MPC-VLO, MPC-PSX  -2.49%       2         +75.66%
+2025-06-06 2025-12-04 MPC-VLO, MPC-PSX, PSX-VLO  -2.18%       2         +79.22%
+2025-07-09 2026-01-06 PSX-VLO, MPC-VLO, MPC-PSX  -4.31%       2         +76.08%
+2025-08-07 2026-02-05 PSX-VLO, MPC-PSX, COP-EOG  -1.16%       3        +114.26%
+2025-09-08 2026-03-09 PSX-VLO, COP-OXY, MPC-PSX  +2.26%       4        +126.08%
+2025-10-07 2026-04-08 COP-OXY, MPC-VLO, MPC-PSX  +0.53%       3        +134.59%
+2025-11-05 2026-05-07 COP-OXY, XOM-CVX, MPC-VLO  +2.10%       4        +136.08%
+2025-12-05 2026-06-08 COP-OXY, COP-EOG, XOM-CVX  +2.16%       4        +124.65%
+2026-01-07 2026-07-09 XOM-CVX, COP-EOG, EOG-OXY  +1.00%       4        +105.57%
+2026-02-06 2026-08-07 EOG-OXY, COP-OXY, XOM-CVX  +2.48%       3         +84.72%
+2026-03-10 2026-09-08 EOG-OXY, XOM-CVX, MPC-VLO  +2.15%       2         +38.92%
+2026-04-09 2026-10-07 COP-OXY, XOM-CVX, COP-EOG  +0.00%       0          +0.00%
+
+TRADES
+   pair portfolio_start signal_day   fill_day   exit_day         reason  gap_entry_sigmas  hold  net_return_on_gross
+COP-OXY      2024-11-01 2024-12-23 2024-12-24 2025-04-08 prices crossed           -2.0400    70              +0.0503
+XOM-CVX      2024-11-01 2025-01-17 2025-01-21 2025-04-23 prices crossed           -2.0200    64              +0.0477
+COP-EOG      2024-11-01 2024-11-25 2024-11-26 2025-05-06     period end           -2.0200   108              -0.0051
+MPC-PSX      2024-12-03 2025-01-14 2025-01-15 2025-03-06 prices crossed           +2.0000    34              +0.0640
+MPC-VLO      2024-12-03 2025-05-06 2025-05-07 2025-06-05     period end           +2.0700    20              -0.0040
+MPC-PSX      2024-12-03 2025-04-21 2025-04-22 2025-06-05     period end           +2.0600    31              -0.0454
+MPC-PSX      2025-01-03 2025-03-05 2025-03-06 2025-04-08 prices crossed           -2.3800    23              +0.0516
+MPC-VLO      2025-01-03 2025-05-27 2025-05-28 2025-07-08     period end           +2.1200    27              +0.0171
+COP-OXY      2025-01-03 2025-04-09 2025-04-10 2025-07-08     period end           +2.0800    59              +0.0491
+MPC-PSX      2025-01-03 2025-05-06 2025-05-07 2025-07-08     period end           +2.4500    41              -0.0051
+MPC-PSX      2025-02-05 2025-02-26 2025-02-27 2025-04-09 prices crossed           -2.3900    29              +0.0381
+MPC-VLO      2025-02-05 2025-04-24 2025-04-25 2025-08-06     period end           +2.3300    70              -0.0004
+MPC-PSX      2025-02-05 2025-05-21 2025-05-22 2025-08-06     period end           +2.4600    51              +0.0176
+XOM-CVX      2025-03-07 2025-04-21 2025-04-22 2025-08-06 prices crossed           +2.0100    73              +0.0651
+MPC-PSX      2025-03-07 2025-03-21 2025-03-24 2025-09-05     period end           +2.1100   114              -0.0851
+MPC-VLO      2025-03-07 2025-04-24 2025-04-25 2025-09-05     period end           +2.9300    91              +0.0344
+MPC-VLO      2025-04-07 2025-05-06 2025-05-07 2025-09-04 prices crossed           +2.7900    82              +0.0479
+MPC-VLO      2025-04-07 2025-09-23 2025-09-24 2025-10-03 prices crossed           -2.2100     7              +0.0296
+PSX-VLO      2025-04-07 2025-04-08 2025-04-09 2025-10-06     period end           -2.3800   123              -0.0624
+MPC-PSX      2025-04-07 2025-04-21 2025-04-22 2025-10-06     period end           +2.2400   115              -0.0758
+PSX-VLO      2025-05-07 2025-09-03 2025-09-04 2025-11-04     period end           -2.7500    43              -0.0298
+MPC-VLO      2025-05-07 2025-07-10 2025-07-11 2025-11-04     period end           -2.1900    81              -0.0451
+MPC-VLO      2025-06-06 2025-07-11 2025-07-14 2025-12-04     period end           -2.0100   101              -0.0512
+PSX-VLO      2025-06-06 2025-09-08 2025-09-09 2025-12-04     period end           -2.3900    61              -0.0142
+PSX-VLO      2025-07-09 2025-09-09 2025-09-10 2026-01-06     period end           -2.0900    81              -0.0435
+MPC-VLO      2025-07-09 2025-09-16 2025-09-17 2026-01-06     period end           -2.0900    76              -0.0861
+PSX-VLO      2025-08-07 2025-09-08 2025-09-09 2026-02-05     period end           -2.1800   103              -0.0208
+MPC-PSX      2025-08-07 2026-01-08 2026-01-09 2026-02-05     period end           -2.1000    18              +0.0114
+COP-EOG      2025-08-07 2025-12-11 2025-12-12 2026-02-05     period end           +2.2100    36              -0.0251
+PSX-VLO      2025-09-08 2025-09-23 2025-09-24 2025-12-15 prices crossed           -2.0400    57              +0.0263
+PSX-VLO      2025-09-08 2026-01-05 2026-01-06 2026-03-09     period end           -2.1600    42              -0.0096
+COP-OXY      2025-09-08 2025-11-04 2025-11-05 2026-03-09     period end           +2.1600    83              +0.0153
+MPC-PSX      2025-09-08 2026-01-08 2026-01-09 2026-03-09     period end           -2.0700    39              +0.0357
+COP-OXY      2025-10-07 2025-12-08 2025-12-09 2026-03-13 prices crossed           +2.4300    64              +0.0446
+MPC-VLO      2025-10-07 2025-11-04 2025-11-05 2026-04-08     period end           -2.4200   104              -0.0861
+MPC-PSX      2025-10-07 2025-12-30 2025-12-31 2026-04-08     period end           -2.1000    66              +0.0585
+COP-OXY      2025-11-05 2025-12-11 2025-12-12 2026-02-20 prices crossed           +2.2500    46              +0.0466
+COP-OXY      2025-11-05 2026-03-12 2026-03-13 2026-05-07     period end           -2.4000    38              +0.0039
+XOM-CVX      2025-11-05 2025-12-29 2025-12-30 2026-05-07     period end           +2.0100    88              -0.0070
+MPC-VLO      2025-11-05 2025-12-29 2025-12-30 2026-05-07     period end           -2.1500    88              +0.0195
+COP-OXY      2025-12-05 2025-12-11 2025-12-12 2026-02-20 prices crossed           +2.1300    46              +0.0466
+COP-OXY      2025-12-05 2026-03-12 2026-03-13 2026-06-08     period end           -2.5900    59              -0.0068
+COP-EOG      2025-12-05 2025-12-11 2025-12-12 2026-06-08     period end           +2.1200   120              +0.0258
+XOM-CVX      2025-12-05 2026-01-29 2026-01-30 2026-06-08     period end           +2.2900    88              -0.0008
+EOG-OXY      2026-01-07 2026-02-23 2026-02-24 2026-06-18 prices crossed           -2.5800    80              +0.0241
+XOM-CVX      2026-01-07 2026-02-10 2026-02-11 2026-07-09     period end           +2.1200   101              +0.0275
+COP-EOG      2026-01-07 2026-05-19 2026-05-20 2026-07-09     period end           -2.1100    33              -0.0313
+EOG-OXY      2026-01-07 2026-06-24 2026-06-25 2026-07-09     period end           +2.1600     9              +0.0097
+EOG-OXY      2026-02-06 2026-02-23 2026-02-24 2026-06-18 prices crossed           -2.1800    80              +0.0241
+EOG-OXY      2026-02-06 2026-06-29 2026-06-30 2026-08-07 prices crossed           +2.4000    27              +0.0511
+COP-OXY      2026-02-06 2026-02-20 2026-02-23 2026-08-07     period end           -2.0300   115              -0.0013
+EOG-OXY      2026-03-10 2026-03-31 2026-04-01 2026-04-15 prices crossed           -2.1700     9              +0.0218
+EOG-OXY      2026-03-10 2026-06-24 2026-06-25 2026-09-08     period end           +2.2400    51              +0.0425
+
+RESULT
+  Annualised Sharpe +0.30 (need >= 0.5); portfolios positive 12 of 18 (need >= 11); completed trades 53 (need >= 10)
+  Total return +1.70%; annualised volatility 2.97%; max drawdown -3.51%; win rate 57%; average hold 63.5 days; largest held exposure in a portfolio 136% of its capital (at most 100% at entry)
+  Exits: period end 37, prices crossed 16
+  FROZEN TEST: NOT SUPPORTED
+
+DECLARED CHECKS (not results)
+  trigger 1.5 sigma: Sharpe +0.20, total +1.18%, max drawdown -4.42%, portfolios positive 11/18, trades 65
+  trigger 2.5 sigma: Sharpe +0.32, total +1.59%, max drawdown -2.98%, portfolios positive 10/18, trades 41
+  cost 10 bp: Sharpe +0.25, total +1.39%, max drawdown -3.66%, portfolios positive 12/18, trades 53
+  cost 20 bp: Sharpe +0.14, total +0.76%, max drawdown -3.95%, portfolios positive 12/18, trades 53
+  fixed three pairs: Sharpe -0.14, total -0.66%, max drawdown -4.13%, portfolios positive 7/18, trades 33
+  all 7 candidates: Sharpe +0.36, total +1.27%, max drawdown -1.93%, portfolios positive 10/18, trades 95
+  same-day fills: Sharpe +0.36, total +2.09%, max drawdown -3.44%, portfolios positive 12/18, trades 53
+  by pair: COP-EOG 4 trades, win 25%, average -0.89% on gross; COP-OXY 9 trades, win 78%, average +2.76% on gross; EOG-OXY 6 trades, win 100%, average +2.89% on gross; MPC-PSX 11 trades, win 64%, average +0.60% on gross; MPC-VLO 11 trades, win 45%, average -1.13% on gross; PSX-VLO 7 trades, win 14%, average -2.20% on gross; XOM-CVX 5 trades, win 60%, average +2.65% on gross
+  placebo, 200 draws of three random oil pairs: median Sharpe -0.20; share at least as good as the main result 23%

@@ -50,3 +50,9 @@ f31a54ac670502133ccf9d818ecb7ca0425257c27a2201bf4b6a84ed3f2944ec  scripts/foreca
 765f6f30512bb15f23ad951d1d376d081fe6a49fe030c6ed50df7df4b8b80d05  data/outside/index_changes.csv
 344f5baa6351054ff40982fca2e4ae9f2a04d28b2a7df55a4e81c2d56932762f  data/sec/cover_page_shares_joiners.csv
 dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# Distance pairs (variant 5) held-out wrapper, frozen 2026-11-15 16:02 EST before the held-out run; reproduces the design output exactly
+3f9c40d3b0e729e9dfe956f63203f631fffac109c2eba1011d79e2b2c7421127  scripts/pairs_distance_heldout.py
+27e73ae21205cb9b691f8b0e9f1f6dfa9fda281cb77911792daaa698022cf165  hypothesis-distance.md
+c4f2a40fd030ef54c4a2b4f6c2d12848678db94d9f5e3dfb5ebb05dc5037bca2  scripts/pairs_distance.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv

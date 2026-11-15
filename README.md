@@ -7,11 +7,11 @@ Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers
 ## Ground rules
 
 - **Design window:** 2021-11-01 to 2024-10-31. All exploring and back-testing so far happened here.
-- **Held-out window:** 2024-11-01 to 2026-10-30. Opened once for variant 6 (attempts #26-#27), code unchanged. Not yet run for any other variant.
+- **Held-out window:** 2024-11-01 to 2026-10-30. Opened once each for variant 6 (attempts #26-#27) and variant 5 (#28-#29, via `scripts/pairs_distance_heldout.py`), code unchanged.
 - **Logging:** every look at the data is recorded in [attempts-log.md](attempts-log.md).
 - **Freezing:** rules files are locked before their back-test runs. Their SHA-256 fingerprints are in `output/frozen_fingerprints.txt`, so frozen files stay at these paths and are never edited.
 
-## Strategies tested (design window; variant 6 also held-out)
+## Strategies tested (design window; variants 5 and 6 also held-out)
 
 | # | Strategy | Rules (frozen) | Code | Main output | Result |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers
 | 2 | Index funds sell heavy-buyback stocks at S&P's quarterly share update (C2b) | `hypothesis-c2.md` | `scripts/c2_forecast_shrink.py --float`, `scripts/c2_backtest_design.py` | `output/c2_backtest_design.txt` | Not supported |
 | 3 | Kalman-filter pairs, v1 | `hypothesis-pairs.md` | `scripts/pairs_kalman.py` | `output/pairs_backtest_design.txt` | Too few trades (1) |
 | 4 | Kalman-filter pairs, v2 (no cointegration test) | `hypothesis-pairs-v2.md` | `scripts/pairs_kalman_v2.py` | `output/pairs_v2_backtest_design.txt` | Not supported (Sharpe −0.12) |
-| 5 | **Distance-method pairs** (Gatev et al. 2006) | `hypothesis-distance.md` | `scripts/pairs_distance.py` | `output/distance_backtest_design.txt` | **Chosen.** Sharpe +0.21, 27 trades |
+| 5 | **Distance-method pairs** (Gatev et al. 2006) | `hypothesis-distance.md` | `scripts/pairs_distance.py` | `output/distance_backtest_design.txt` | **Chosen.** Design: Sharpe +0.21, 27 trades. Held-out: **not supported**, Sharpe +0.30, 12 of 18 portfolios positive, 53 trades (`output/distance_backtest_heldout.txt`) |
 | 6 | Bounce-back after XLE's forced sells (from a breakdown of #1, `scripts/diag_flow_legs.py`) | `hypothesis-sells-reversal.md` (with Amendment 1) | `scripts/forecast_rebalance_v2.py`, `scripts/sells_reversal.py`; held-out inputs: `scripts/fetch_heldout_inputs.py` | `output/sells_reversal_design.txt` | Held-out: **not supported** (6 signals, one rebalance, 2 of 6 right, -1.66% avg; `output/sells_reversal_heldout.txt`) |
 
 ## Folders
