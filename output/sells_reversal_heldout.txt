@@ -1,0 +1,25 @@
+Fingerprints checked OK.
+VARIANT 6, sells bounce-back. HELD-OUT PERIOD (single run): 2024-11-01 to 2026-10-30
+Move = stock minus XLE, rebalance close to close 5 trading days later; positive = prediction right.
+
+rebalance   stock  forecast    move   stock    -XLE  run-up
+2026-09-18  XOM      -0.78d  +1.15%  -1.80%  +2.96%  +0.07%
+2026-09-18  CVX      -0.92d  +0.54%  -2.42%  +2.96%  +0.57%
+2026-09-18  COP      -0.70d  -0.48%  -3.44%  +2.96%  +2.85%
+2026-09-18  MPC      -0.62d  -4.43%  -7.38%  +2.96%  -9.23%
+2026-09-18  PSX      -0.39d  -3.41%  -6.36%  +2.96%  -6.61%
+2026-09-18  VLO      -0.49d  -3.36%  -6.32%  +2.96%  -8.18%
+
+RESULT: 6 signals, right 2/6, avg -1.66% before cost, -1.86% after; return on capital summed -0.93%
+  stock side avg -4.62%, XLE side avg +2.96%
+  return on capital per rebalance after costs: 2026-09-18 -0.93%
+  bar (>= 6 signals, avg >= 0.40% before cost, right on more than half): NOT SUPPORTED
+
+DECLARED CHECKS (not results)
+  threshold 0.5 days: 4 signals, right 2/4, avg -0.80% before cost, -1.00% after; return on capital summed -0.50%
+  hold 1 days: 6 signals, right 0/6, avg -1.63% before cost, -1.83% after; return on capital summed -0.91%
+  hold 3 days: 6 signals, right 2/6, avg -2.54% before cost, -2.74% after; return on capital summed -1.37%
+  cost 10 bps: 6 signals, right 2/6, avg -1.66% before cost, -2.06% after; return on capital summed -1.03%
+  cost 20 bps: 6 signals, right 2/6, avg -1.66% before cost, -2.46% after; return on capital summed -1.23%
+  placebo, forecast sells under 0.25 days: 27 signals, right 16/27, avg +0.36% before cost, +0.16% after; return on capital summed -0.16%
+  mirror, fade forecast buys >= 0.25 days: 4 signals, right 2/4, avg -0.55% before cost, -0.75% after; return on capital summed -0.09%

@@ -1,0 +1,6 @@
+effective,ticker,change,acquirer,ratio,source
+2024-11-22,MRO,merge,COP,0.255,COP 8-K item 2.01 filed 2024-11-22 (0001104659-24-122112): completed; 0.255 COP per MRO
+2024-11-26,TPL,add,,,S&P DJI press release 2024-11-21: TPL replaces MRO in the S&P 500 prior to the open on 2024-11-26
+2025-03-24,EXE,add,,,S&P DJI press release 2025-03-07: effective prior to the open on 2025-03-24 (after the 2025-03-12 snapshot; not used by the frozen rule)
+2025-07-18,HES,merge,CVX,1.025,ratio: CVX 8-K 2023-10-23 (0000950142-23-002670); completion: CVX 8-K 2025-07-18 (0000950142-25-001949)
+2026-05-07,CTRA,merge,DVN,0.70,DVN 8-K item 2.01 filed 2026-05-07 (0001193125-26-211971): consummated; 0.70 DVN per CTRA
