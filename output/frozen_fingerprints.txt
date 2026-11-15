@@ -35,3 +35,18 @@ f5f3e6918b5b78e24abafd6a8a408a03027ea291b303ac441c8dac77e94124e7  hypothesis-c2.
 43131f632f49a50e9258d991cd61ffe287cc1db659baac7c06f9971432985178  hypothesis-pairs.md
 4d8d0818f2e98216633decc0de28141646d4eaca3e5b0930c47fc762fedd02b4  hypothesis-pairs-v2.md
 27e73ae21205cb9b691f8b0e9f1f6dfa9fda281cb77911792daaa698022cf165  hypothesis-distance.md
+
+# Sells bounce-back (variant 6), frozen 2026-11-15 15:16 EST, before any held-out data was fetched or read
+61ecd5df8a10885540ff68cf727b16b2703632092c38c5c7d5eac4439c627611  hypothesis-sells-reversal.md
+6dc492b25f6cc2c360407fa216ad7eb8ce7d3013f5a1da11bad242d395222a43  scripts/sells_reversal.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# Sells bounce-back (variant 6), REFROZEN 2026-11-15 15:47 EST after Amendment 1 (attempt #25), before any held-out data was fetched or read; supersedes the variant 6 entry above
+1f03cee34a1321bc7b971be14f7c95da15994eb3011d63ba44da71e76bf2068e  hypothesis-sells-reversal.md
+6dc492b25f6cc2c360407fa216ad7eb8ce7d3013f5a1da11bad242d395222a43  scripts/sells_reversal.py
+3cf722943cade6e19ce9c306bf3457fdf2656609c5760e29e50f990e9a8c80bb  scripts/fetch_heldout_inputs.py
+03d8c9c092d7c92105176627e53b8df1c004eccdebb890408eb960f1239d80fc  scripts/forecast_rebalance_v2.py
+f31a54ac670502133ccf9d818ecb7ca0425257c27a2201bf4b6a84ed3f2944ec  scripts/forecast_rebalance.py
+765f6f30512bb15f23ad951d1d376d081fe6a49fe030c6ed50df7df4b8b80d05  data/outside/index_changes.csv
+344f5baa6351054ff40982fca2e4ae9f2a04d28b2a7df55a4e81c2d56932762f  data/sec/cover_page_shares_joiners.csv
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv

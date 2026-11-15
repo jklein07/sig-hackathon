@@ -1,0 +1,4 @@
+effective,ticker,change,acquirer,ratio,source
+2022-10-03,EQT,add,,,S&P 500 addition; effective date from memory (only needs to fall between 2022-09-30 and the 2022-12-09 snapshot)
+2022-10-12,TRGP,add,,,S&P 500 addition; effective date from memory (only needs to fall between 2022-09-30 and the 2022-12-09 snapshot)
+2024-05-03,PXD,merge,XOM,2.3234,ratio: XOM 8-K 2023-10-11 (0000950103-23-014885); completion: XOM 8-K item 2.01 filed 2024-05-03

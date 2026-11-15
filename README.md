@@ -20,6 +20,7 @@ Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers
 | 3 | Kalman-filter pairs, v1 | `hypothesis-pairs.md` | `scripts/pairs_kalman.py` | `output/pairs_backtest_design.txt` | Too few trades (1) |
 | 4 | Kalman-filter pairs, v2 (no cointegration test) | `hypothesis-pairs-v2.md` | `scripts/pairs_kalman_v2.py` | `output/pairs_v2_backtest_design.txt` | Not supported (Sharpe −0.12) |
 | 5 | **Distance-method pairs** (Gatev et al. 2006) | `hypothesis-distance.md` | `scripts/pairs_distance.py` | `output/distance_backtest_design.txt` | **Chosen.** Sharpe +0.21, 27 trades |
+| 6 | Bounce-back after XLE's forced sells (from a breakdown of #1, `scripts/diag_flow_legs.py`) | `hypothesis-sells-reversal.md` (with Amendment 1) | `scripts/forecast_rebalance_v2.py`, `scripts/sells_reversal.py`; held-out inputs: `scripts/fetch_heldout_inputs.py` | `output/sells_reversal_design.txt` | In-sample only (found on the design data); held-out not run |
 
 ## Folders
 
