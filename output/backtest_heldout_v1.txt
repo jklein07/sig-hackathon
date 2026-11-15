@@ -1,0 +1,29 @@
+Fingerprints checked OK.
+VARIANT 1 BACK-TEST, HELD-OUT PERIOD (single run; fourth look at the window) (2024-11-01 to 2026-10-30), rules as frozen in hypothesis.md
+6 signals at 1 of 8 rebalances. Returns are stock minus XLE, before costs, signed so that positive means the prediction was right.
+
+rebalance   stock  forecast   fund   run-up  reversal
+2026-09-18  XOM       -0.8d  sells   +0.07%    +1.15%
+2026-09-18  CVX       -0.9d  sells   +0.57%    +0.54%
+2026-09-18  COP       -0.7d  sells   +2.85%    -0.48%
+2026-09-18  EOG       +0.7d   buys   -1.24%    -0.27%
+2026-09-18  OXY       +0.8d   buys   -2.84%    +0.41%
+2026-09-18  MPC       -0.6d  sells   -9.23%    -4.43%
+
+RUNUP: right sign on 3 of 6; average -1.64% (median -0.58%); after 0.20% cost -1.84%
+  frozen test (at most one wrong sign, average at least 0.40%): NOT SUPPORTED
+  random dates: chance alone did as well in 92.2% of 10,000 draws
+  return on capital per rebalance after costs: 2026-09-18 -0.92%; total -0.92%
+REVERSAL: right sign on 3 of 6; average -0.51% (median +0.07%); after 0.20% cost -0.71%
+  frozen test (at most one wrong sign, average at least 0.40%): NOT SUPPORTED
+  random dates: chance alone did as well in 76.7% of 10,000 draws
+  return on capital per rebalance after costs: 2026-09-18 -0.36%; total -0.36%
+
+DECLARED CHECKS (not results)
+  cost 10 bps: runup: right sign 3/6, average -1.64%, return on capital after costs -1.02%; reversal: right sign 3/6, average -0.51%, return on capital after costs -0.46%
+  cost 20 bps: runup: right sign 3/6, average -1.64%, return on capital after costs -1.22%; reversal: right sign 3/6, average -0.51%, return on capital after costs -0.66%
+  threshold 0.25 days (10 signals): runup: right sign 4/10, average -3.12%, return on capital after costs -1.41%; reversal: right sign 4/10, average -1.22%, return on capital after costs -0.24%
+  threshold 1.0 days (0 signals): no signals
+  reversal window 3 days: right sign 3/6, average -0.95%
+  reversal window 10 days: right sign 4/6, average +0.20%
+  placebo, forecast under 0.25 days (62 stock-quarters): runup right sign 27/62, average -0.23%; reversal right sign 38/62, average +0.37%

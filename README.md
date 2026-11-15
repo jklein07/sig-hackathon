@@ -7,15 +7,15 @@ Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers
 ## Ground rules
 
 - **Design window:** 2021-11-01 to 2024-10-31. All exploring and back-testing so far happened here.
-- **Held-out window:** 2024-11-01 to 2026-10-30. Opened once each for variant 6 (attempts #26-#27), variant 5 (#28-#29, via `scripts/pairs_distance_heldout.py`) and variant 7 (#32), code unchanged.
+- **Held-out window:** 2024-11-01 to 2026-10-30. Opened once each for variant 6 (attempts #26-#27), variant 5 (#28-#29, via `scripts/pairs_distance_heldout.py`), variant 7 (#32) and variant 1 (#33-#34, via `scripts/backtest_heldout_v1.py`), code unchanged.
 - **Logging:** every look at the data is recorded in [attempts-log.md](attempts-log.md).
 - **Freezing:** rules files are locked before their back-test runs. Their SHA-256 fingerprints are in `output/frozen_fingerprints.txt`, so frozen files stay at these paths and are never edited.
 
-## Strategies tested (design window; variants 5, 6 and 7 also held-out)
+## Strategies tested (design window; variants 1, 5, 6 and 7 also held-out)
 
 | # | Strategy | Rules (frozen) | Code | Main output | Result |
 |---|---|---|---|---|---|
-| 1 | Trade ahead of XLE's quarterly cap rebalance | `hypothesis.md` | `scripts/forecast_rebalance.py`, `scripts/backtest_design.py` | `output/backtest_design.txt` | Not supported |
+| 1 | Trade ahead of XLE's quarterly cap rebalance | `hypothesis.md` | `scripts/forecast_rebalance.py`, `scripts/backtest_design.py` | `output/backtest_design.txt`, `output/backtest_heldout_v1.txt` | Not supported (design); held-out also not supported, both legs 3 of 6 |
 | 2 | Index funds sell heavy-buyback stocks at S&P's quarterly share update (C2b) | `hypothesis-c2.md` | `scripts/c2_forecast_shrink.py --float`, `scripts/c2_backtest_design.py` | `output/c2_backtest_design.txt` | Not supported |
 | 3 | Kalman-filter pairs, v1 | `hypothesis-pairs.md` | `scripts/pairs_kalman.py` | `output/pairs_backtest_design.txt` | Too few trades (1) |
 | 4 | Kalman-filter pairs, v2 (no cointegration test) | `hypothesis-pairs-v2.md` | `scripts/pairs_kalman_v2.py` | `output/pairs_v2_backtest_design.txt` | Not supported (Sharpe −0.12) |
