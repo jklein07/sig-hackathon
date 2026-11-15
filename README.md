@@ -2,7 +2,7 @@
 
 Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers in `data/prices.csv`. VIX is used as a signal only; no leverage.
 
-**Chosen strategy: distance-method pairs (variant 5).**
+**Chosen strategy: XLE flow timing**: forecast XLE's forced quarterly cap-rebalance trades from public filings, then buy the stocks it is forced to sell at the rebalance close, hedged with XLE, for 5 days (variant 6, which grew out of variant 1). Held-out result: not supported.
 
 ## Ground rules
 
@@ -19,8 +19,8 @@ Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers
 | 2 | Index funds sell heavy-buyback stocks at S&P's quarterly share update (C2b) | `hypothesis-c2.md` | `scripts/c2_forecast_shrink.py --float`, `scripts/c2_backtest_design.py` | `output/c2_backtest_design.txt` | Not supported |
 | 3 | Kalman-filter pairs, v1 | `hypothesis-pairs.md` | `scripts/pairs_kalman.py` | `output/pairs_backtest_design.txt` | Too few trades (1) |
 | 4 | Kalman-filter pairs, v2 (no cointegration test) | `hypothesis-pairs-v2.md` | `scripts/pairs_kalman_v2.py` | `output/pairs_v2_backtest_design.txt` | Not supported (Sharpe −0.12) |
-| 5 | **Distance-method pairs** (Gatev et al. 2006) | `hypothesis-distance.md` | `scripts/pairs_distance.py` | `output/distance_backtest_design.txt` | **Chosen.** Design: Sharpe +0.21, 27 trades. Held-out: **not supported**, Sharpe +0.30, 12 of 18 portfolios positive, 53 trades (`output/distance_backtest_heldout.txt`) |
-| 6 | Bounce-back after XLE's forced sells (from a breakdown of #1, `scripts/diag_flow_legs.py`) | `hypothesis-sells-reversal.md` (with Amendment 1) | `scripts/forecast_rebalance_v2.py`, `scripts/sells_reversal.py`; held-out inputs: `scripts/fetch_heldout_inputs.py` | `output/sells_reversal_design.txt` | Held-out: **not supported** (6 signals, one rebalance, 2 of 6 right, -1.66% avg; `output/sells_reversal_heldout.txt`) |
+| 5 | Distance-method pairs (Gatev et al. 2006) | `hypothesis-distance.md` | `scripts/pairs_distance.py` | `output/distance_backtest_design.txt` | Design: Sharpe +0.21, 27 trades. Held-out: **not supported**, Sharpe +0.30, 12 of 18 portfolios positive, 53 trades (`output/distance_backtest_heldout.txt`) |
+| 6 | **Chosen.** Bounce-back after XLE's forced sells (from a breakdown of #1, `scripts/diag_flow_legs.py`) | `hypothesis-sells-reversal.md` (with Amendment 1) | `scripts/forecast_rebalance_v2.py`, `scripts/sells_reversal.py`; held-out inputs: `scripts/fetch_heldout_inputs.py` | `output/sells_reversal_design.txt` | Held-out: **not supported** (6 signals, one rebalance, 2 of 6 right, -1.66% avg; `output/sells_reversal_heldout.txt`) |
 | 7 | XLE scaled down when volatile (20% / 1-month vol), rest in a CVX/XOP pair (teammates' idea) | `hypothesis-volpair.md` | `scripts/vol_pair.py` | `output/volpair_backtest_design.txt`, `output/volpair_backtest_heldout.txt` | Design: **supported** (Sharpe +0.94 vs XLE +0.85, drawdown -12.9% vs -26.0%). Held-out: **not supported** (beats XLE on Sharpe and drawdown, but the pair leg lost 3.0%) |
 
 ## Folders
