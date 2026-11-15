@@ -1,0 +1,37 @@
+VARIANT 7: XLE volatility scaling + CVX/XOP pair. HELD-OUT PERIOD (third look at the window; pair settings were seen on the full file)
+First decision 2024-10-31; returns 2024-11-01 to 2026-10-30. After costs (5 bp per transaction, 0.5%/yr borrow).
+
+STRATEGY:        Sharpe +1.29, total +66.15%, volatility 21.7%, max drawdown -19.10%
+XLE BENCHMARK:   Sharpe +1.24, total +69.06%, volatility 23.5%, max drawdown -20.14%
+PAIR LEG ALONE:  Sharpe -0.21, total -3.01%, volatility 6.5%, max drawdown -9.41%; completed trades 11
+Average XLE weight 92%; pair trade open 42% of days
+
+TESTS
+  1. Sharpe above XLE's: yes (+1.29 vs +1.24)
+  2. Max drawdown smaller than XLE's: yes (-19.10% vs -20.14%)
+  3. Pair leg alone positive after costs with >= 10 trades: no (-3.01%, 11 trades)
+  FROZEN TEST: NOT SUPPORTED
+
+PAIR TRADES (pair leg alone)
+                 dir signal_day   fill_day   exit_day      reason  hold  return_on_sleeve
+short CVX / long XOP 2024-11-01 2024-11-04 2024-11-11 take profit     5           +0.0299
+long CVX / short XOP 2025-01-02 2025-01-03 2025-01-21 take profit    10           +0.0038
+short CVX / long XOP 2025-02-21 2025-02-24 2025-04-14 take profit    35           -0.0353
+long CVX / short XOP 2025-05-08 2025-05-09 2025-06-24 take profit    30           -0.0180
+short CVX / long XOP 2025-07-08 2025-07-09 2025-08-28 take profit    36           -0.0183
+long CVX / short XOP 2025-09-26 2025-09-29 2025-10-13 take profit    10           +0.0087
+long CVX / short XOP 2025-12-03 2025-12-04 2025-12-16 take profit     8           +0.0231
+short CVX / long XOP 2026-01-05 2026-01-06 2026-01-30 take profit    17           -0.0077
+long CVX / short XOP 2026-03-02 2026-03-03 2026-04-20 take profit    33           -0.0272
+long CVX / short XOP 2026-04-29 2026-04-30 2026-05-14 take profit    10           +0.0069
+short CVX / long XOP 2026-09-23 2026-09-24 2026-10-06 take profit     8           +0.0062
+short CVX / long XOP 2026-10-22 2026-10-23 2026-10-30  period end     5           -0.0004
+  exits: take profit 11, period end 1
+
+DECLARED CHECKS (not results)
+  volatility rule only (pair sleeve in cash): Sharpe +1.31, total +67.52%, volatility 21.6%, max drawdown -18.84%
+  base = trailing 252-day XLE volatility: Sharpe +1.36, total +71.14%, volatility 21.6%, max drawdown -18.62%
+  z window 20 days: strategy Sharpe +1.30, total +66.47%, volatility 21.7%, max drawdown -18.86%; pair alone total +1.38%, 21 trades
+  z window 60 days: strategy Sharpe +1.34, total +69.91%, volatility 21.7%, max drawdown -19.10%; pair alone total +3.78%, 8 trades
+  cost 10 bp: strategy Sharpe +1.28, total +65.65%, volatility 21.7%, max drawdown -19.11%; pair alone total -4.13%
+  cost 20 bp: strategy Sharpe +1.27, total +64.65%, volatility 21.7%, max drawdown -19.13%; pair alone total -6.34%

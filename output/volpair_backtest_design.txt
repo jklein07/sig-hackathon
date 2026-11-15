@@ -1,0 +1,46 @@
+VARIANT 7: XLE volatility scaling + CVX/XOP pair. DESIGN PERIOD
+First decision 2021-12-31; returns 2022-01-03 to 2024-10-31. After costs (5 bp per transaction, 0.5%/yr borrow).
+
+STRATEGY:        Sharpe +0.94, total +58.56%, volatility 19.4%, max drawdown -12.88%
+XLE BENCHMARK:   Sharpe +0.85, total +71.47%, volatility 26.7%, max drawdown -26.04%
+PAIR LEG ALONE:  Sharpe +0.66, total +11.19%, volatility 6.0%, max drawdown -6.20%; completed trades 20
+Average XLE weight 81%; pair trade open 37% of days
+
+TESTS
+  1. Sharpe above XLE's: yes (+0.94 vs +0.85)
+  2. Max drawdown smaller than XLE's: yes (-12.88% vs -26.04%)
+  3. Pair leg alone positive after costs with >= 10 trades: yes (+11.19%, 20 trades)
+  FROZEN TEST: SUPPORTED
+
+PAIR TRADES (pair leg alone)
+                 dir signal_day   fill_day   exit_day      reason  hold  return_on_sleeve
+short CVX / long XOP 2022-01-21 2022-01-24 2022-02-02 take profit     7           +0.0127
+short CVX / long XOP 2022-03-03 2022-03-04 2022-03-22 take profit    12           -0.0036
+long CVX / short XOP 2022-05-27 2022-05-31 2022-06-21 take profit    14           +0.0033
+long CVX / short XOP 2022-08-18 2022-08-19 2022-09-08 take profit    13           +0.0048
+short CVX / long XOP 2022-09-23 2022-09-26 2022-09-29 take profit     3           +0.0285
+short CVX / long XOP 2022-12-01 2022-12-02 2023-01-13 take profit    28           -0.0145
+long CVX / short XOP 2023-03-03 2023-03-06 2023-03-10 take profit     4           +0.0168
+short CVX / long XOP 2023-03-15 2023-03-16 2023-04-04 take profit    13           +0.0004
+long CVX / short XOP 2023-05-22 2023-05-23 2023-05-31 take profit     5           +0.0086
+long CVX / short XOP 2023-07-07 2023-07-10 2023-09-06 take profit    41           -0.0410
+short CVX / long XOP 2023-09-20 2023-09-21 2023-10-12 take profit    15           +0.0163
+long CVX / short XOP 2023-10-27 2023-10-30 2023-11-24 take profit    18           +0.0137
+short CVX / long XOP 2024-02-05 2024-02-06 2024-02-22 take profit    11           +0.0156
+long CVX / short XOP 2024-03-04 2024-03-05 2024-04-19 take profit    32           -0.0125
+short CVX / long XOP 2024-05-01 2024-05-02 2024-06-11 take profit    27           +0.0078
+short CVX / long XOP 2024-07-18 2024-07-19 2024-07-23 take profit     2           +0.0050
+short CVX / long XOP 2024-07-30 2024-07-31 2024-08-02 take profit     2           -0.0039
+short CVX / long XOP 2024-08-02 2024-08-05 2024-08-08 take profit     3           +0.0201
+long CVX / short XOP 2024-08-12 2024-08-13 2024-08-21 take profit     6           +0.0089
+short CVX / long XOP 2024-09-30 2024-10-01 2024-10-04 take profit     3           +0.0219
+short CVX / long XOP 2024-10-28 2024-10-29 2024-10-31  period end     2           -0.0003
+  exits: take profit 20, period end 1
+
+DECLARED CHECKS (not results)
+  volatility rule only (pair sleeve in cash): Sharpe +0.91, total +55.50%, volatility 19.3%, max drawdown -13.28%
+  base = trailing 252-day XLE volatility: Sharpe +0.91, total +73.52%, volatility 25.0%, max drawdown -19.63%
+  z window 20 days: strategy Sharpe +0.97, total +61.30%, volatility 19.4%, max drawdown -12.88%; pair alone total +6.08%, 31 trades
+  z window 60 days: strategy Sharpe +0.96, total +59.97%, volatility 19.3%, max drawdown -12.88%; pair alone total +15.81%, 15 trades
+  cost 10 bp: strategy Sharpe +0.93, total +57.81%, volatility 19.4%, max drawdown -12.89%; pair alone total +8.91%
+  cost 20 bp: strategy Sharpe +0.91, total +56.33%, volatility 19.4%, max drawdown -12.95%; pair alone total +4.50%

@@ -56,3 +56,8 @@ dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.cs
 27e73ae21205cb9b691f8b0e9f1f6dfa9fda281cb77911792daaa698022cf165  hypothesis-distance.md
 c4f2a40fd030ef54c4a2b4f6c2d12848678db94d9f5e3dfb5ebb05dc5037bca2  scripts/pairs_distance.py
 dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
+
+# XLE volatility + CVX/XOP pair (variant 7), frozen 2026-11-15 16:15 EST before any return was computed
+f999b1f3019cb940fcd30a21cd16e7f8e0ad5546000c9a8a9fd4a661b3ea75aa  hypothesis-volpair.md
+02d83617473844c03a7218239f08c59b6d32aa98825806dfbbab8d6634b8fc63  scripts/vol_pair.py
+dda2575eec0a444e5c89e9e2cfd11734e9c71f5b44313d6e980368c1e75ed272  data/prices.csv
