@@ -1,41 +1,45 @@
 # SIG Energy Strategy Hackathon: Team 1
 
-Due Wed 2026-11-18, 3 pm. Team: Riveen, Jon, Prakrit. Trades only the 14 tickers in `data/prices.csv`. VIX is used as a signal only; no leverage.
+Team: Riveen, Jon, Prakrit. Submission due Wed 2026-11-18, 3 pm; pitch the same evening. We may trade only the 14 tickers in the hackathon dataset (VIX is a signal only).
 
-**Chosen strategy: XLE flow timing**: forecast XLE's forced quarterly cap-rebalance trades from public filings, then buy the stocks it is forced to sell at the rebalance close, hedged with XLE, for 5 days (variant 6, which grew out of variant 1). Held-out result: not supported.
+## Our strategy: timing OIH with the oil futures curve
 
-## Ground rules
+Each day we compare the price of oil for next month (Yahoo `CL=F`) with oil for December 2027 (`CLZ27.NYM`). When next-month oil is unusually expensive compared with 2027 oil, the spike is not expected to last, so producers don't plan much more drilling, and OIH (a fund of drilling-services companies) has tended to lag. We short OIH then, and buy it when the gap is unusually small.
 
-- **Design window:** 2021-11-01 to 2024-10-31. All exploring and back-testing so far happened here.
-- **Held-out window:** 2024-11-01 to 2026-10-30. Opened once each for variant 6 (attempts #26-#27), variant 5 (#28-#29, via `scripts/pairs_distance_heldout.py`), variant 7 (#32) and variant 1 (#33-#34, via `scripts/backtest_heldout_v1.py`), code unchanged.
-- **Logging:** every look at the data is recorded in [attempts-log.md](attempts-log.md).
-- **Freezing:** rules files are locked before their back-test runs. Their SHA-256 fingerprints are in `output/frozen_fingerprints.txt`, so frozen files stay at these paths and are never edited.
+**Rules** (fixed before any test, see [`strategy/PREREG_curve.md`](strategy/PREREG_curve.md)):
 
-## Strategies tested (design window; variants 1, 5, 6 and 7 also held-out)
+1. Gap = ln(next-month price / Dec-2027 price).
+2. Score z = (gap - its 252-day average) / its 252-day standard deviation.
+3. Position in OIH = -z / 2, capped at 100% short or long. The rest is cash.
+4. Rebalance every 5 trading days at the close. 0.10% cost per dollar traded.
 
-| # | Strategy | Rules (frozen) | Code | Main output | Result |
-|---|---|---|---|---|---|
-| 1 | Trade ahead of XLE's quarterly cap rebalance | `hypothesis.md` | `scripts/forecast_rebalance.py`, `scripts/backtest_design.py` | `output/backtest_design.txt`, `output/backtest_heldout_v1.txt` | Not supported (design); held-out also not supported, both legs 3 of 6 |
-| 2 | Index funds sell heavy-buyback stocks at S&P's quarterly share update (C2b) | `hypothesis-c2.md` | `scripts/c2_forecast_shrink.py --float`, `scripts/c2_backtest_design.py` | `output/c2_backtest_design.txt` | Not supported |
-| 3 | Kalman-filter pairs, v1 | `hypothesis-pairs.md` | `scripts/pairs_kalman.py` | `output/pairs_backtest_design.txt` | Too few trades (1) |
-| 4 | Kalman-filter pairs, v2 (no cointegration test) | `hypothesis-pairs-v2.md` | `scripts/pairs_kalman_v2.py` | `output/pairs_v2_backtest_design.txt` | Not supported (Sharpe −0.12) |
-| 5 | Distance-method pairs (Gatev et al. 2006) | `hypothesis-distance.md` | `scripts/pairs_distance.py` | `output/distance_backtest_design.txt` | Design: Sharpe +0.21, 27 trades. Held-out: **not supported**, Sharpe +0.30, 12 of 18 portfolios positive, 53 trades (`output/distance_backtest_heldout.txt`) |
-| 6 | **Chosen.** Bounce-back after XLE's forced sells (from a breakdown of #1, `scripts/diag_flow_legs.py`) | `hypothesis-sells-reversal.md` (with Amendment 1) | `scripts/forecast_rebalance_v2.py`, `scripts/sells_reversal.py`; held-out inputs: `scripts/fetch_heldout_inputs.py` | `output/sells_reversal_design.txt` | Held-out: **not supported** (6 signals, one rebalance, 2 of 6 right, -1.66% avg; `output/sells_reversal_heldout.txt`) |
-| 7 | XLE scaled down when volatile (20% / 1-month vol), rest in a CVX/XOP pair (teammates' idea) | `hypothesis-volpair.md` | `scripts/vol_pair.py` | `output/volpair_backtest_design.txt`, `output/volpair_backtest_heldout.txt` | Design: **supported** (Sharpe +0.94 vs XLE +0.85, drawdown -12.9% vs -26.0%). Held-out: **not supported** (beats XLE on Sharpe and drawdown, but the pair leg lost 3.0%) |
+**Results** (rule chosen on 2021-11-01 to 2024-12-31, then run once on 2025-01-01 to 2026-10-30):
 
-## Folders
+| | Build | Test |
+|---|---|---|
+| Sharpe, ours / holding OIH | 0.62 / 0.42 | 0.85 / 0.87 |
+| Worst drop, ours / OIH | -12% / -36% | -19% / -34% |
+| Return beyond our OIH exposure (alpha), per year | +11.0% (t = 1.5) | +11.6% (t = 1.0) |
 
-- `data/`: the hackathon prices (`prices.csv`, `dataset_readme.csv`).
-  - `data/sec/`: SEC data. Fund holdings (XLE, IVV), company share counts, and Berkshire's CVX and OXY stakes.
-  - `data/outside/`: other non-price inputs (rebalance calendar, volumes, snapshot-day closes).
-- `data_heldout/`: held-out inputs for variant 6, laid out like `data/` (SEC holdings, index changes, snapshot-day closes and volumes).
-- `scripts/`: one script per step. Each script's header says how to run it.
-- `output/`: results and charts. The file-name prefix gives the strategy: `distance_`, `pairs_`, `pairs_v2_`, `c2_` / `c2b_`. Unprefixed files belong to the XLE strategy.
+$1 grew to $1.65 versus $1.51 for holding OIH (2022-11 to 2026-10, after costs). The evidence is thin: the test covers 22 months, alpha is not significant, and the same rule on 2001-2021 data (a shorter part of the curve) showed no effect. Full write-up: [`strategy/RESULTS.md`](strategy/RESULTS.md).
+
+## Repository
+
+| Folder | What's in it |
+|---|---|
+| [`strategy/`](strategy/) | The main strategy: pre-registrations, the three scripts, data and results. Start here. |
+| [`submission/`](submission/) | What we hand in: the deck (.pptx) and the one-page writeup. |
+| [`research/`](research/) | Everything we tried before settling on this: eight other strategies, each tested and dropped, with their full logs. |
 
 ## Running
 
-Use the SIG virtual environment (`Scarlet-Investment-Group/.venv`) with `python -I`. For example, from `scripts/`:
+Python 3 with pandas, numpy, statsmodels (and xlrd for the history test). From `strategy/`:
 
 ```bash
-../../Scarlet-Investment-Group/.venv/bin/python -I pairs_distance.py --selftest
+python curve_is.py       # build period: tests the 12 combinations, picks OIH + gap
+python curve_oos.py      # runs the frozen rule on the test period, writes data/curve_backtest.csv
+python curve_history.py  # same rule on 2001-2021 with EIA data
+python deck_numbers.py   # the remaining deck figures (examples, average position, yearly split)
 ```
+
+Each script reproduces the saved files in `strategy/data/` exactly.
